@@ -50,17 +50,7 @@ export class UrlController {
             const urlsCollection = db.collection<IUrl>('urls');
             
             const url = await urlsCollection.findOne({ urlCode: req.params.code });
-
-            if (url) {
-                await urlsCollection.updateOne(
-                    { urlCode: req.params.code },
-                    { $inc: { clicks: 1 } }
-                );
-                
-                res.redirect(301, url.longUrl);
-            } else {
-                res.status(404).json({ error: 'Short URL not found.' });
-            }
+            res.status(200).json({longUrl: url?.longUrl})
         } catch (error) {
             console.error(error);
             res.status(500).json({ error: 'Server error' });
