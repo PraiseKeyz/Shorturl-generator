@@ -7,7 +7,7 @@ export class UrlController {
     static async shortenUrl(req: Request, res: Response): Promise<void> {
         const { longUrl } = req.body;
 
-        if (!this.isValidUrl(longUrl)) {
+        if (!UrlController.isValidUrl(longUrl)) {
             res.status(400).json({ error: 'Invalid URL format provided.' });
             return;
         }
