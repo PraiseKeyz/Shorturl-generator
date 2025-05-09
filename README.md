@@ -11,6 +11,10 @@ A TypeScript-based URL shortening service that converts long URLs into short, ma
 - TypeScript support
 - MongoDB integration
 
+## API Documentation
+
+You can find the API documentation [here](https://documenter.getpostman.com/view/40640896/2sB2ixkE6u).
+
 ## Prerequisites
 
 - Node.js (v14 or higher)
